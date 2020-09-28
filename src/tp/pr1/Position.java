@@ -1,13 +1,15 @@
 package tp.pr1;
 
-
 public class Position {
 
 	
 	private int fila;
 	private int columna;
 	
-	
+	public Position(int fila, int columna) {
+		this.fila= fila;
+		this.columna= columna;
+	}
 	
 	public int getFila(){
 		
@@ -27,11 +29,11 @@ public class Position {
 		this.fila = f;
 	}
 	
-	public boolean ValidarPosicion(int fila, int columna, int tamaño) { //Validan si la posicion esta dentro de tablero
-		
+	public boolean ValidarPosicion(int fila, int columna, int tamano) { //Validan si la posicion esta dentro de tablero
+		//RECORDAR LUEGO PASARLE TAM-1 POR SI EL USUARIO METE FILAS TAL CUAL.
 		boolean booleano=false;
 		
-		if(fila<tamaño && columna<tamaño) {
+		if(fila<tamano && columna<tamano) {
 			booleano=true;
 			
 		}

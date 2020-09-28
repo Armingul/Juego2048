@@ -1,42 +1,34 @@
 package tp.pr1;
-import java.util.Random;
-
 
 public class Cell {
 
 	
-	private int celda;
+	private int cell;
 	
-	
-	
-	public  Cell() { //constructora por defecto
-		Random dosocuatro = new Random();
-		
-		 this.celda = (dosocuatro.nextInt(2)+1)*2;
+	public Cell() {
+		this.cell=0;
 	}
-	 public Cell (int valorAMeter){
-		 this.celda=valorAMeter;
-	 }
+
 	
 	public int  getCell(){
 		
-		return this.celda;
+		return this.cell;
 		
 	}
 	
 	
-	 public  void setCell(int valor){
+	 public void setCell(int valor){
 		
-		this.celda=valor;
+		this.cell=valor;
 		
 	}
-	
 	
 	 
 	public boolean isEmpty(){
 		
 		boolean vacia=false;
-		if (this.celda == 0 ){
+		
+		if (this.cell == 0 ){
 			vacia=true;
 			
 		}
@@ -48,9 +40,9 @@ public class Cell {
 		
 		boolean fusion=false;
 		
-		if(this.celda== neighbour.getCell() ){
+		if(this.cell== neighbour.getCell() ){
 			fusion=true;
-			this.celda= this.celda + neighbour.getCell();
+			this.cell= this.cell + neighbour.getCell();
 			neighbour.setCell(0);
 			
 		}
@@ -58,14 +50,6 @@ public class Cell {
 		
 		return fusion;
 	}
-	
-	public int incremento(){
-		
-		return this.celda*=2;
-		
-	}
-	
-	
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
